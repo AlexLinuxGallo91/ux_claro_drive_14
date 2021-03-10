@@ -94,14 +94,20 @@ class EvaluacionesClaroDriveSteps:
                 input_email, data_key=argumentos_json[const_claro_drive.JSON_ARG_USER],
                 class_name=const_claro_drive.INICIO_SESION_CLASS_NAME_INPUT_EMAIL)
 
+            btn_siguiente = HtmlActions.webdriver_wait_presence_of_element_located(webdriver_test_ux, 6, id='send')
+            HtmlActions.click_html_element(btn_siguiente, id='send')
+
             input_password = HtmlActions.webdriver_wait_presence_of_element_located(
                 webdriver_test_ux, 6, class_name=const_claro_drive.INICIO_SESION_CLASS_NAME_INPUT_PASSWORD)
             input_password.send_keys(argumentos_json[const_claro_drive.JSON_ARG_PASSWORD])
 
-            btn_ingreso_cuenta = HtmlActions.webdriver_wait_element_to_be_clickable(
-                webdriver_test_ux, 6, xpath=const_claro_drive.INICIO_SESION_XPATH_BTN_INICIAR_SESION)
-            HtmlActions.click_html_element(
-                btn_ingreso_cuenta, xpath=const_claro_drive.INICIO_SESION_XPATH_BTN_INICIAR_SESION)
+            btn_siguiente = HtmlActions.webdriver_wait_presence_of_element_located(webdriver_test_ux, 6, id='send')
+            HtmlActions.click_html_element(btn_siguiente, id='send')
+
+            # btn_ingreso_cuenta = HtmlActions.webdriver_wait_element_to_be_clickable(
+            #     webdriver_test_ux, 6, xpath=const_claro_drive.INICIO_SESION_XPATH_BTN_INICIAR_SESION)
+            # HtmlActions.click_html_element(
+            #     btn_ingreso_cuenta, xpath=const_claro_drive.INICIO_SESION_XPATH_BTN_INICIAR_SESION)
 
             # inicia el tiempo de inicio
             tiempo_step_inicio = Temporizador.obtener_tiempo_timer()
